@@ -64,6 +64,10 @@ console.log(`Es6: ${arraySumN(numbers2,n)}`);
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+let frase = ["mi","piace","il","gelato"]
+countLetters= (array) => array.map((x)=>x.split().lenght);
+
+console.log(`Es7: ${countLetters(frase)}`);
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
