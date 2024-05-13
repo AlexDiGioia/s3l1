@@ -37,8 +37,8 @@ console.log(`Es3:${onlyEven(numbers)}`);
 */
 
 const numbers2 = [...numbers];
-let sum=0;
-sumArray = (array) =>array.forEach(element => sum+=element )
+let sum = 0;
+sumArray = (array) => array.forEach((element) => (sum += element));
 sumArray(numbers2);
 console.log(`Es4: ${sum}`);
 
@@ -48,30 +48,42 @@ console.log(`Es4: ${sum}`);
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-sumArrayReduce= (array) => array.reduce((accumulator,currentValue) => accumulator+currentValue,0);
+sumArrayReduce = (array) =>
+  array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
 console.log(`Es5: ${sumArrayReduce(numbers2)}`);
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
-let n=10;
-arraySumN= (array,n) => array.map((x)=>x+n);
-console.log(`Es6: ${arraySumN(numbers2,n)}`);
-
+let n = 10;
+arraySumN = (array, n) => array.map((x) => x + n);
+console.log(`Es6: ${arraySumN(numbers2, n)}`);
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
-let frase = ["mi","piace","il","gelato"]
-countLetters= (array) => array.map((x)=>x.split().lenght);
+let frase = ["mi", "piace", "il", "gelato"];
+countLetters = (array) => array.map((x) => x.split("").length);
 
 console.log(`Es7: ${countLetters(frase)}`);
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+let oneTo100 = [];
+
+for (let i = 0; i < 100; i++) {
+  oneTo100.push(i);
+}
+oddOneTo100 = [];
+onlyOdd = (array, oddArray) =>
+  array.forEach((element) =>
+    (element % 2 !== 0) ? oddArray.push(element) : ""
+  );
+onlyOdd(oneTo100, oddOneTo100);
+console.log(`Es8: ${oddOneTo100}`);
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
