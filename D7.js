@@ -78,10 +78,8 @@ for (let i = 0; i < 100; i++) {
   oneTo100.push(i);
 }
 oddOneTo100 = [];
-onlyOdd = (array, oddArray) =>
-  array.forEach((element) =>
-    (element % 2 !== 0) ? oddArray.push(element) : ""
-  );
+const onlyOdd = (array, oddArray) =>
+  array.forEach((element) => (element % 2 !== 0 ? oddArray.push(element) : ""));
 onlyOdd(oneTo100, oddOneTo100);
 console.log(`Es8: ${oddOneTo100}`);
 
@@ -204,6 +202,18 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+let cont = 0;
+let oldest="prova";
+olderFilm = (array, i, old) =>
+  array.forEach((film) =>
+    i === 0
+      ? ((i = film.Year), (old = film.Title))
+      : i > film.Year
+      ? ((i = film.Year), (old = film.Title))
+      : ""
+  );
+olderFilm(movies, cont,oldest);
+console.log(`Es9:film più vecchio è${oldest}`);
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
